@@ -8,7 +8,7 @@ class LaptopCrawler extends AbstractParamCrawler
         // CPU
         'CPU型号'  => 'cpu_number',
         'CPU主频'  => 'cpu_freq',
-        '最高睿频'   => 'cpu_turbofreq',
+        '最高睿频'   => 'cpu_freq_turbo',
         '二级缓存'   => 'cpu_l2',
         '三级缓存'   => 'cpu_l3',
         '核心/线程数' => 'cpu_cores',

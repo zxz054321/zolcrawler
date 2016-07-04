@@ -61,6 +61,7 @@ class ServiceProvider extends BaseServiceProvider
 
             $crawler->setFilter('cpu_number', new CpuNumber());
             $crawler->setFilter('cpu_freq', new CpuFreq());
+            $crawler->setFilter('cpu_freq_turbo', new CpuFreq());
             $crawler->setFilter('cpu_l2', $toInt);
             $crawler->setFilter('cpu_l3', $toInt);
             $crawler->setFilter('cpu_cores', new CpuCore());
