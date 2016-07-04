@@ -8,20 +8,28 @@ class DiskCapacity implements Filter
 {
     public function apply($value)
     {
+        $result  = [];
         $matches = [];
 
         if (preg_match_all('/\d+[GT]B/', $value, $matches)) {
-            $max = 0;
+            $matches = $matches[0];
 
-            foreach ($matches[0] as $capacity) {
-                $capacity = $this->toGb($capacity);
-                $max      = $capacity > $max ? $capacity : $max;
+            array_walk($matches, function (&$val) {
+                $val = $this->toGb($val);
+            });
+
+            rsort($matches);
+
+            $value = $this->toGb($matches[0]);
+
+            if (count($matches) > 1) {
+                $result['disk_cache'] = $matches[1];
             }
-
-            $value = $max;
         }
 
-        return (int)$value;
+        $result['disk_capacity'] = (int)$value;
+
+        return $result;
     }
 
     protected function toGb($value)
