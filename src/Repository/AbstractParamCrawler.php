@@ -6,7 +6,7 @@ use Symfony\Component\DomCrawler\Crawler;
 
 abstract class AbstractParamCrawler extends AbstractCrawler
 {
-    protected $match = [];
+    protected $dict = [];
 
     /**
      * @param $url
@@ -55,8 +55,8 @@ abstract class AbstractParamCrawler extends AbstractCrawler
     {
         $key = false;
 
-        if (isset($this->match[ $name ])) {
-            $key = $this->match[ $name ];
+        if (isset($this->dict[ $name ])) {
+            $key = $this->dict[ $name ];
         }
 
         return $key;

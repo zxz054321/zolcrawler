@@ -8,9 +8,11 @@ class CpuCore implements Filter
 {
     protected $coreDict = [
         '双核心' => 2,
+        '四核心' => 4,
     ];
 
     protected $threadDict = [
+        '双线程' => 2,
         '四线程' => 4,
     ];
 

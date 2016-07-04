@@ -8,18 +8,23 @@ class CpuNumber implements Filter
 {
     public function apply($value)
     {
-        $result = [];
+        $result  = [];
+        $matches = [];
 
         if (strpos($value, 'Intel') === 0) {
-            $matches             = [];
             $result['cpu_brand'] = 'intel';
 
             preg_match('/Intel (.+) ([\w]+)/', $value, $matches);
 
-            $result['cpu_series'] = str_replace('酷睿', '', $matches[1]);
+            $result['cpu_series'] = $matches[1];
             $result['cpu_number'] = $matches[2];
         } elseif (strpos($value, 'AMD') === 0) {
             $result['cpu_brand'] = 'amd';
+
+            preg_match('/AMD (\w+)-(\w+)/', $value, $matches);
+
+            $result['cpu_series'] = $matches[1];
+            $result['cpu_number'] = $matches[2];
         }
 
         return $result;

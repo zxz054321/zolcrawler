@@ -4,7 +4,7 @@ namespace AbelHalo\ZolCrawler\Repository;
 
 class LaptopCrawler extends AbstractParamCrawler
 {
-    protected $match = [
+    protected $dict = [
         // CPU
         'CPU型号'  => 'cpu_number',
         'CPU主频'  => 'cpu_freq',
