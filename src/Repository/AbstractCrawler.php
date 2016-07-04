@@ -2,6 +2,7 @@
 
 namespace AbelHalo\ZolCrawler\Repository;
 
+use AbelHalo\ZolCrawler\Repository\Exceptions\CantFetchHtmlException;
 use Curl\Curl;
 
 abstract class AbstractCrawler
@@ -28,8 +29,12 @@ abstract class AbstractCrawler
     public function fetchHtml($url)
     {
         $curl = new Curl();
-        
+
         $curl->get($url);
+
+        if (!$curl->response) {
+            throw new CantFetchHtmlException;
+        }
 
         return $curl->response;
     }

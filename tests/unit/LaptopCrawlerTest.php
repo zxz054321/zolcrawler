@@ -1,5 +1,6 @@
 <?php
 
+use AbelHalo\ZolCrawler\Repository\Exceptions\CantFetchHtmlException;
 use AbelHalo\ZolCrawler\Repository\LaptopCrawler;
 
 class LaptopCrawlerTest extends TestCase
@@ -23,10 +24,14 @@ class LaptopCrawlerTest extends TestCase
 
     public function testCrawl()
     {
-        $dataset = app('zolcrawler.laptop.index')->crawl();
-        $crawler = app('zolcrawler.laptop.param');
-        $url     = $dataset[0]['param_url'];
+        try {
+            $dataset = app('zolcrawler.laptop.index')->crawl();
+            $crawler = app('zolcrawler.laptop.param');
+            $url     = $dataset[0]['param_url'];
 
-        $this->assertNotEmpty($crawler->crawl($url));
+            $this->assertNotEmpty($crawler->crawl($url));
+        } catch (CantFetchHtmlException $e) {
+            echo 'NetworkError';
+        }
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use AbelHalo\ZolCrawler\Repository\Exceptions\CantFetchHtmlException;
 use AbelHalo\ZolCrawler\Repository\IndexCrawler;
 
 class IndexCrawlerTest extends TestCase
@@ -25,8 +26,12 @@ class IndexCrawlerTest extends TestCase
         // $crawler =app('zolcrawler.laptop.index');
         // dd($crawler->crawl(160));
 
-        $this->assertEquals(30, count($crawler->crawl()));
-        $this->assertFalse($crawler->crawl(999));
+        try {
+            $this->assertEquals(30, count($crawler->crawl()));
+            $this->assertFalse($crawler->crawl(999));
+        } catch (CantFetchHtmlException $e) {
+            echo 'NetworkError';
+        }
     }
 
     protected function makeCrawler(Closure $urlGenerator = null)
