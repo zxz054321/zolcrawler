@@ -8,6 +8,11 @@ abstract class AbstractParamCrawler extends AbstractCrawler
 {
     protected $match = [];
 
+    /**
+     * @param $url
+     * @return array
+     * @throws Exceptions\CantFetchHtmlException
+     */
     public function crawl($url)
     {
         $html    = $this->fetchHtml($url);

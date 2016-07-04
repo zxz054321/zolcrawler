@@ -2,6 +2,7 @@
 
 namespace AbelHalo\ZolCrawler\Repository;
 
+use AbelHalo\ZolCrawler\Repository\Exceptions\CantFetchHtmlException;
 use Symfony\Component\DomCrawler\Crawler;
 
 class IndexCrawler extends AbstractCrawler
@@ -14,8 +15,9 @@ class IndexCrawler extends AbstractCrawler
     }
 
     /**
-     * @param int $index page index
+     * @param int $index
      * @return array|false
+     * @throws CantFetchHtmlException
      */
     public function crawl($index = 1)
     {

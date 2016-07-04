@@ -26,6 +26,11 @@ abstract class AbstractCrawler
         return $value;
     }
 
+    /**
+     * @param $url
+     * @return string|bool
+     * @throws CantFetchHtmlException
+     */
     public function fetchHtml($url)
     {
         $curl = new Curl();
