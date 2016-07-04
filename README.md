@@ -1,4 +1,4 @@
-# Zol crawler
+# Zol Crawler
 
 [![Build Status](https://travis-ci.org/zxz054321/zolcrawler.svg?branch=master)](https://travis-ci.org/zxz054321/zolcrawler)
 
