@@ -37,5 +37,10 @@ class CpuNumberTest extends TestCase
         $this->assertEquals('amd', $cpu['cpu_brand']);
         $this->assertEquals('FX', $cpu['cpu_series']);
         $this->assertEquals('7600P', $cpu['cpu_number']);
+
+        $cpu    = $filter->apply('AMD A10 PRO-870');
+        $this->assertEquals('amd', $cpu['cpu_brand']);
+        $this->assertEquals('A10', $cpu['cpu_series']);
+        $this->assertEquals('PRO-870', $cpu['cpu_number']);
     }
 }
