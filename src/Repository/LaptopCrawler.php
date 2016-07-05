@@ -15,6 +15,12 @@ class LaptopCrawler extends AbstractParamCrawler
         '制程工艺'   => 'cpu_lithography',
         '功耗'     => 'cpu_tdp',
 
+        // RAM
+        '内存容量'   => 'ram_capacity',
+        '内存类型'   => 'ram_type',
+        '插槽数量'   => 'ram_slot',
+        '最大内存容量' => 'ram_capacity_max',
+
         // Disk
         '硬盘容量'   => 'disk_capacity',
         '硬盘描述'   => 'disk_description',

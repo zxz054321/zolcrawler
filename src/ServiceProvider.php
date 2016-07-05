@@ -9,6 +9,8 @@ use AbelHalo\ZolCrawler\Repository\Filters\Date;
 use AbelHalo\ZolCrawler\Repository\Filters\DiskCapacity;
 use AbelHalo\ZolCrawler\Repository\Filters\DiskDescription;
 use AbelHalo\ZolCrawler\Repository\Filters\Price;
+use AbelHalo\ZolCrawler\Repository\Filters\RamCapacity;
+use AbelHalo\ZolCrawler\Repository\Filters\RamType;
 use AbelHalo\ZolCrawler\Repository\Filters\Status;
 use AbelHalo\ZolCrawler\Repository\Filters\ToFloat;
 use AbelHalo\ZolCrawler\Repository\Filters\ToInt;
@@ -67,6 +69,10 @@ class ServiceProvider extends BaseServiceProvider
             $crawler->setFilter('cpu_cores', new CpuCore());
             $crawler->setFilter('cpu_lithography', $toInt);
             $crawler->setFilter('cpu_tdp', $toInt);
+
+            $crawler->setFilter('ram_capacity', new RamCapacity());
+            $crawler->setFilter('ram_type', new RamType());
+            $crawler->setFilter('ram_capacity_max', $toInt);
 
             $crawler->setFilter('disk_capacity', new DiskCapacity());
             $crawler->setFilter('disk_description', new DiskDescription());
