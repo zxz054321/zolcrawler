@@ -2,20 +2,18 @@
 
 namespace AbelHalo\ZolCrawler;
 
-use AbelHalo\ZolCrawler\Repository\Filters\CpuCore;
-use AbelHalo\ZolCrawler\Repository\Filters\CpuFreq;
-use AbelHalo\ZolCrawler\Repository\Filters\CpuNumber;
-use AbelHalo\ZolCrawler\Repository\Filters\Date;
-use AbelHalo\ZolCrawler\Repository\Filters\DiskCapacity;
-use AbelHalo\ZolCrawler\Repository\Filters\DiskDescription;
-use AbelHalo\ZolCrawler\Repository\Filters\Price;
-use AbelHalo\ZolCrawler\Repository\Filters\RamCapacity;
-use AbelHalo\ZolCrawler\Repository\Filters\RamType;
-use AbelHalo\ZolCrawler\Repository\Filters\Status;
-use AbelHalo\ZolCrawler\Repository\Filters\ToFloat;
-use AbelHalo\ZolCrawler\Repository\Filters\ToInt;
-use AbelHalo\ZolCrawler\Repository\IndexCrawler;
-use AbelHalo\ZolCrawler\Repository\LaptopCrawler;
+use AbelHalo\ZolCrawler\Filters\CpuCore;
+use AbelHalo\ZolCrawler\Filters\CpuFreq;
+use AbelHalo\ZolCrawler\Filters\CpuNumber;
+use AbelHalo\ZolCrawler\Filters\Date;
+use AbelHalo\ZolCrawler\Filters\DiskCapacity;
+use AbelHalo\ZolCrawler\Filters\DiskDescription;
+use AbelHalo\ZolCrawler\Filters\Price;
+use AbelHalo\ZolCrawler\Filters\RamCapacity;
+use AbelHalo\ZolCrawler\Filters\RamType;
+use AbelHalo\ZolCrawler\Filters\Status;
+use AbelHalo\ZolCrawler\Filters\ToFloat;
+use AbelHalo\ZolCrawler\Filters\ToInt;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 class ServiceProvider extends BaseServiceProvider
@@ -45,9 +43,7 @@ class ServiceProvider extends BaseServiceProvider
     public function register()
     {
         $this->app->bind('zolcrawler.laptop.index', function () {
-            $crawler = new IndexCrawler(function ($index) {
-                return "http://detail.zol.com.cn/notebook_advSearch/subcate16_1_s859_9_1__$index.html";
-            });
+            $crawler = new IndexCrawler();
 
             $crawler->setFilter('price', new Price());
             $crawler->setFilter('status', new Status());

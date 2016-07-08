@@ -1,17 +1,29 @@
 <?php
 
-namespace AbelHalo\ZolCrawler\Repository;
+namespace AbelHalo\ZolCrawler;
 
-use AbelHalo\ZolCrawler\Repository\Exceptions\CantFetchHtmlException;
+use AbelHalo\ZolCrawler\Contracts\UrlGenerator;
+use AbelHalo\ZolCrawler\Exceptions\CantFetchHtmlException;
 use Symfony\Component\DomCrawler\Crawler;
 
 class IndexCrawler extends AbstractCrawler
 {
+    /**
+     * @var UrlGenerator
+     */
     protected $urlGenerator;
 
-    public function __construct(\Closure $urlGenerator)
+    public function __construct(UrlGenerator $urlGenerator = null)
+    {
+        is_null($urlGenerator) or
+        $this->setUrlGenerator($urlGenerator);
+    }
+
+    public function setUrlGenerator(UrlGenerator $urlGenerator)
     {
         $this->urlGenerator = $urlGenerator;
+
+        return $this;
     }
 
     /**
@@ -65,8 +77,6 @@ class IndexCrawler extends AbstractCrawler
 
     public function pageUrl($index)
     {
-        $generator = $this->urlGenerator;
-
-        return $generator($index);
+        return $this->urlGenerator->generate($index);
     }
 }
