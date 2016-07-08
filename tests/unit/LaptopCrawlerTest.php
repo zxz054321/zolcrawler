@@ -2,7 +2,7 @@
 
 use AbelHalo\ZolCrawler\Exceptions\CantFetchHtmlException;
 use AbelHalo\ZolCrawler\LaptopCrawler;
-use AbelHalo\ZolCrawler\UrlGenerator\Laptop;
+use AbelHalo\ZolCrawler\UrlGenerator\Laptop14;
 
 class LaptopCrawlerTest extends TestCase
 {
@@ -27,7 +27,7 @@ class LaptopCrawlerTest extends TestCase
     {
         try {
             $dataset = app('zolcrawler.laptop.index')
-                ->setUrlGenerator(new Laptop())
+                ->setUrlGenerator(new Laptop14())
                 ->crawl();
             $crawler = app('zolcrawler.laptop.param');
             $url     = $dataset[0]['param_url'];

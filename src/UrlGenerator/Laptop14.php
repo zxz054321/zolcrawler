@@ -4,7 +4,13 @@ namespace AbelHalo\ZolCrawler\UrlGenerator;
 
 use AbelHalo\ZolCrawler\Contracts\UrlGenerator;
 
-class Laptop implements UrlGenerator
+/**
+ * Class Laptop14
+ * 笔记本14寸最新
+ * 
+ * @package AbelHalo\ZolCrawler\UrlGenerator
+ */
+class Laptop14 implements UrlGenerator
 {
     public function generate($page)
     {

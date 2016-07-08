@@ -1,7 +1,7 @@
 <?php
 
 use AbelHalo\ZolCrawler\Exceptions\CantFetchHtmlException;
-use AbelHalo\ZolCrawler\UrlGenerator\Laptop;
+use AbelHalo\ZolCrawler\UrlGenerator\Laptop14;
 
 class IndexCrawlerTest extends TestCase
 {
@@ -39,6 +39,6 @@ class IndexCrawlerTest extends TestCase
      */
     protected function makeCrawler()
     {
-        return app('zolcrawler.laptop.index')->setUrlGenerator(new Laptop());
+        return app('zolcrawler.laptop.index')->setUrlGenerator(new Laptop14());
     }
 }
