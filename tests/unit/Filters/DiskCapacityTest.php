@@ -1,6 +1,6 @@
 <?php
 
-use AbelHalo\ZolCrawler\Repository\Filters\DiskCapacity;
+use AbelHalo\ZolCrawler\Filters\DiskCapacity;
 
 class DiskCapacityTest extends TestCase
 {

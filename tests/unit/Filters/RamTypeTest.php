@@ -1,6 +1,6 @@
 <?php
 
-use AbelHalo\ZolCrawler\Repository\Filters\RamType;
+use AbelHalo\ZolCrawler\Filters\RamType;
 
 class RamTypeTest extends TestCase
 {

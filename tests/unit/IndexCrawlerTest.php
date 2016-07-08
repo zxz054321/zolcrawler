@@ -1,7 +1,7 @@
 <?php
 
-use AbelHalo\ZolCrawler\Repository\Exceptions\CantFetchHtmlException;
-use AbelHalo\ZolCrawler\Repository\IndexCrawler;
+use AbelHalo\ZolCrawler\Exceptions\CantFetchHtmlException;
+use AbelHalo\ZolCrawler\UrlGenerator\Laptop;
 
 class IndexCrawlerTest extends TestCase
 {
@@ -34,14 +34,11 @@ class IndexCrawlerTest extends TestCase
         }
     }
 
-    protected function makeCrawler(Closure $urlGenerator = null)
+    /**
+     * @return \AbelHalo\ZolCrawler\IndexCrawler
+     */
+    protected function makeCrawler()
     {
-        if (!$urlGenerator) {
-            $urlGenerator = function ($index) {
-                return "http://detail.zol.com.cn/notebook_advSearch/subcate16_1_s859_9_1__$index.html";
-            };
-        }
-
-        return new IndexCrawler($urlGenerator);
+        return app('zolcrawler.laptop.index')->setUrlGenerator(new Laptop());
     }
 }

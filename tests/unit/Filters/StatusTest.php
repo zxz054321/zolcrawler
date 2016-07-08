@@ -1,6 +1,6 @@
 <?php
 
-use AbelHalo\ZolCrawler\Repository\Filters\Status;
+use AbelHalo\ZolCrawler\Filters\Status;
 
 class StatusTest extends TestCase
 {

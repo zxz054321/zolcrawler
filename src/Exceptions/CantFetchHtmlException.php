@@ -1,6 +1,6 @@
 <?php
 
-namespace AbelHalo\ZolCrawler\Repository\Exceptions;
+namespace AbelHalo\ZolCrawler\Exceptions;
 
 class CantFetchHtmlException extends \Exception
 {

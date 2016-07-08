@@ -1,7 +1,8 @@
 <?php
 
-use AbelHalo\ZolCrawler\Repository\Exceptions\CantFetchHtmlException;
-use AbelHalo\ZolCrawler\Repository\LaptopCrawler;
+use AbelHalo\ZolCrawler\Exceptions\CantFetchHtmlException;
+use AbelHalo\ZolCrawler\LaptopCrawler;
+use AbelHalo\ZolCrawler\UrlGenerator\Laptop;
 
 class LaptopCrawlerTest extends TestCase
 {
@@ -25,7 +26,9 @@ class LaptopCrawlerTest extends TestCase
     public function testCrawl()
     {
         try {
-            $dataset = app('zolcrawler.laptop.index')->crawl();
+            $dataset = app('zolcrawler.laptop.index')
+                ->setUrlGenerator(new Laptop())
+                ->crawl();
             $crawler = app('zolcrawler.laptop.param');
             $url     = $dataset[0]['param_url'];
 

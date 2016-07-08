@@ -1,8 +1,8 @@
 <?php
 
-namespace AbelHalo\ZolCrawler\Repository\Filters;
+namespace AbelHalo\ZolCrawler\Filters;
 
-use AbelHalo\ZolCrawler\Repository\Filter;
+use AbelHalo\ZolCrawler\Contracts\Filter;
 
 class CpuFreq implements Filter
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace AbelHalo\ZolCrawler\Repository;
+namespace AbelHalo\ZolCrawler;
 
 class LaptopCrawler extends AbstractParamCrawler
 {

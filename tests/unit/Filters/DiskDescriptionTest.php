@@ -1,6 +1,6 @@
 <?php
 
-use AbelHalo\ZolCrawler\Repository\Filters\DiskDescription;
+use AbelHalo\ZolCrawler\Filters\DiskDescription;
 
 class DiskDescriptionTest extends TestCase
 {

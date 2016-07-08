@@ -1,7 +1,8 @@
 <?php
 
-namespace AbelHalo\ZolCrawler\Repository;
+namespace AbelHalo\ZolCrawler;
 
+use AbelHalo\ZolCrawler\Contracts\Filter;
 use Symfony\Component\DomCrawler\Crawler;
 
 abstract class AbstractParamCrawler extends AbstractCrawler

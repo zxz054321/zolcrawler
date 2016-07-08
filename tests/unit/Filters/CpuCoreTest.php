@@ -1,6 +1,6 @@
 <?php
 
-use AbelHalo\ZolCrawler\Repository\Filters\CpuCore;
+use AbelHalo\ZolCrawler\Filters\CpuCore;
 
 class CpuCoreTest extends TestCase
 {

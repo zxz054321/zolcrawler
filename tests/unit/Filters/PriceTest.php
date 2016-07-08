@@ -1,6 +1,6 @@
 <?php
 
-use AbelHalo\ZolCrawler\Repository\Filters\Price;
+use AbelHalo\ZolCrawler\Filters\Price;
 
 class PriceTest extends TestCase
 {

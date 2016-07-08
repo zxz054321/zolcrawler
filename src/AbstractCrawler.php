@@ -1,8 +1,9 @@
 <?php
 
-namespace AbelHalo\ZolCrawler\Repository;
+namespace AbelHalo\ZolCrawler;
 
-use AbelHalo\ZolCrawler\Repository\Exceptions\CantFetchHtmlException;
+use AbelHalo\ZolCrawler\Contracts\Filter;
+use AbelHalo\ZolCrawler\Exceptions\CantFetchHtmlException;
 use Curl\Curl;
 
 abstract class AbstractCrawler

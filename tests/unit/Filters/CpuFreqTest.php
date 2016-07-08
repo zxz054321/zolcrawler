@@ -1,6 +1,6 @@
 <?php
 
-use AbelHalo\ZolCrawler\Repository\Filters\CpuFreq;
+use AbelHalo\ZolCrawler\Filters\CpuFreq;
 
 class CpuFreqTest extends TestCase
 {

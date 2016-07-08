@@ -1,6 +1,6 @@
 <?php
 
-use AbelHalo\ZolCrawler\Repository\Filters\RamCapacity;
+use AbelHalo\ZolCrawler\Filters\RamCapacity;
 
 class RamCapacityTest extends TestCase
 {

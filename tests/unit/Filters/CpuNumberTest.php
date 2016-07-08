@@ -1,6 +1,6 @@
 <?php
 
-use AbelHalo\ZolCrawler\Repository\Filters\CpuNumber;
+use AbelHalo\ZolCrawler\Filters\CpuNumber;
 
 class CpuNumberTest extends TestCase
 {
